@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { Kanit } from "next/font/google";
+import "./globals.scss";
+import "./styles/layout.scss";
+import Image from "next/image";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const kanit = Kanit({
+  weight: ["200", "400", "700"],
+  variable: "--kanitFont",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
@@ -24,8 +23,34 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+      <body>
+        <header className="layout__header">
+          <div className="layout__header--content">
+            <img
+              src="/imgs/nicolasvg-1.png"
+              alt="Nicolás VG"
+              className="layout__logo"
+            />
+            <button className="layout__cta">Contactar</button>
+          </div>
+        </header>
+        <div className="layout__body">
+          <aside className="layout__sidebar">
+            <section className="layout__info">
+              <img
+                className="layout__ppic"
+                src="/imgs/ppic.jpg"
+                alt="Nicolás Vanegas"
+              />
+              <div>
+                <h1>Nicolás</h1>
+                <span>Desarrollador Web</span>
+              </div>
+            </section>
+          </aside>
+          <section className="layout__content">{children}</section>
+        </div>
+        <footer className="layout__footer">Pie de página</footer>
       </body>
     </html>
   );

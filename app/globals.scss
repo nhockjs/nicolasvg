@@ -1,0 +1,26 @@
+:root {
+  --colorOne: #03060e;
+  --colorTwo: #070b17;
+  --colorThree: #0a0f20;
+  --textOne: #fffdf9;
+  --textTwo: #f9eee0;
+  --textThree: #fffaf1;
+  --mutedOne: #5c5d5f;
+  --mutedTwo: #dddddd;
+  --ctaColor: #0047f7;
+  --redColor: #f70046;
+  --greenColor: #05ea78;
+  --yellowColor: #ffd400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: kanit, sans-serif;
+  background-color: var(--colorOne);
+  color: var(--textOne);
+}
