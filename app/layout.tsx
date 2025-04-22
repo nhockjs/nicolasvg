@@ -3,6 +3,7 @@ import { Kanit } from "next/font/google";
 import "./globals.scss";
 import "./styles/layout.scss";
 import Image from "next/image";
+import Link from "next/link";
 
 const kanit = Kanit({
   weight: ["200", "400", "700"],
@@ -34,21 +35,55 @@ export default function RootLayout({
             <button className="layout__cta">Contactar</button>
           </div>
         </header>
-        <div className="layout__body">
-          <aside className="layout__sidebar">
-            <section className="layout__info">
-              <img
-                className="layout__ppic"
+        <div className="layout__container">
+          <nav className="layout__nav global__card">
+            <Link href="/" className="layout__link">
+              <Image
                 src="/imgs/ppic.jpg"
-                alt="Nicolás Vanegas"
+                alt="Sobre Nicolás VG"
+                width={50}
+                height={50}
               />
-              <div>
-                <h1>Nicolás</h1>
-                <span>Desarrollador Web</span>
-              </div>
-            </section>
-          </aside>
-          <section className="layout__content">{children}</section>
+              <span>Sobre mí</span>
+            </Link>
+            <Link href="/experiencia" className="layout__link">
+              <Image
+                src="/icons/xp.png"
+                alt="Experiencia laboral de Nicolás VG"
+                width={50}
+                height={50}
+              />{" "}
+              <span>Experiencia</span>
+            </Link>
+            <Link href="/proyectos" className="layout__link">
+              <Image
+                src="/icons/projects.png"
+                alt="Proyectos de Nicolás VG"
+                width={50}
+                height={50}
+              />{" "}
+              <span>Proyectos</span>
+            </Link>
+            <Link href="/laboratorio" className="layout__link">
+              <Image
+                src="/icons/laboratorio.png"
+                alt="Widgets de práctica de Nicolás VG"
+                width={50}
+                height={50}
+              />{" "}
+              <span>Laboratorio</span>
+            </Link>
+            <Link href="/blog" className="layout__link">
+              <Image
+                src="/icons/blog.png"
+                alt="Opiniones de Nicolás VG"
+                width={50}
+                height={50}
+              />{" "}
+              <span>Blog</span>
+            </Link>
+          </nav>
+          <section className="layout__content global__card">{children}</section>
         </div>
         <footer className="layout__footer">Pie de página</footer>
       </body>
