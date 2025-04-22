@@ -1,4 +1,6 @@
 :root {
+  // Color globals
+
   --colorOne: #03060e;
   --colorTwo: #070b17;
   --colorThree: #0a0f20;
@@ -11,6 +13,32 @@
   --redColor: #f70046;
   --greenColor: #05ea78;
   --yellowColor: #ffd400;
+
+  --colorThrgee: rgb(10, 15, 32) 0;
+  // Size globals
+
+  --contentWidth: 550px;
+  @media (max-width: 600px) {
+    --contentWidth: 90vw;
+  }
+}
+
+h1 {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--textOne);
+}
+
+h2 {
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--textOne);
+}
+
+h3 {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--textOne);
 }
 
 * {
@@ -21,6 +49,45 @@
 html,
 body {
   font-family: kanit, sans-serif;
-  background-color: var(--colorOne);
+  background: #101937;
+  background: radial-gradient(
+    ellipse at top center,
+    rgb(16, 25, 55) 0%,
+    rgba(3, 6, 14, 1) 100%
+  );
   color: var(--textOne);
+}
+
+p {
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-weight: 200;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+button {
+  background-color: var(--ctaColor);
+  color: var(--textOne);
+  padding: 5px 20px;
+  border: none;
+  border-radius: 10px;
+}
+
+hr {
+  width: 100%;
+  height: 1px;
+  margin: 15px 0;
+  background-color: #313749;
+  border: none;
+}
+
+.global__card {
+  background-color: var(--colorTwo);
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 10px;
+  width: var(--contentWidth);
 }
