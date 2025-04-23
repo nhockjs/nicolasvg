@@ -1,79 +1,10 @@
-"use client";
-import React from "react";
-import "./styles/home.scss";
+import "./estudios.scss";
 
-interface skillsProps {
-  id: number;
-  name: string;
-  icono: string;
-}
-
-const skills: skillsProps[] = [
-  { id: 0, name: "HTML 5", icono: "html" },
-  { id: 1, name: "CSS 3", icono: "css" },
-  { id: 2, name: "JavaScript", icono: "js" },
-  { id: 3, name: "NextJS", icono: "nextjs" },
-  { id: 4, name: "TypeScript", icono: "typescript" },
-  { id: 5, name: "ReactJS", icono: "react" },
-  { id: 6, name: "Sass", icono: "sass" },
-  { id: 7, name: "SEO", icono: "seo" },
-  { id: 8, name: "UI/UX", icono: "uiux" },
-  { id: 9, name: "WordPress", icono: "wordpress" },
-];
-
-let bookWidth = 80;
-let translateWidth = `-${skills.length * bookWidth}px`;
-
-console.log(translateWidth);
-
-export default function HomePage() {
+export default function Proyectos() {
   return (
-    <section className="home__body">
-      <section className="home__aboutme">
-        <h1>Soy Nicolás Vanegas Garzón</h1>
-        <p>
-          Soy desarrollador web profesional con enfoque en el entorno
-          JavaScript, con amplia experiencia en diseño UI/UX.
-        </p>
-      </section>
-      <hr />
-      <h2>Habilidades técnicas</h2>
-
-      <div className="home__skills--wrapper">
-        <div
-          className="home__skills--track"
-          style={
-            {
-              "--translateWidth": translateWidth,
-              "--bookWidth": bookWidth,
-            } as React.CSSProperties
-          }
-        >
-          {skills.map((x) => (
-            <div className="home__book" key={x.id}>
-              <img
-                src={`/icons/skills/${x.icono}.png`}
-                alt={`Conocimientos en ${x.name}`}
-              />
-              <span> {x.name} </span>
-            </div>
-          ))}
-
-          {skills.map((x) => (
-            <div className="home__book" key={x.id} aria-hidden="true">
-              <img
-                src={`/icons/skills/${x.icono}.png`}
-                alt={`Conocimientos en ${x.name}`}
-              />
-              <span> {x.name} </span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <hr />
+    <section>
+      <h1>Estudios</h1>
       <section className="home__xp">
-        <h2>Experiencia</h2>
         <section className="global__section">
           <div className="global__sectionTitle">
             <img src="icons/jobs/vyte.jpg" alt="Trabajo de Freelancer" />
@@ -140,7 +71,7 @@ export default function HomePage() {
           </div>
           <p>
             Administración web de campañas políticas en elecciones de alcaldes y
-            gobernadores de Colombia2019.
+            gobernadores de Colombia 2019.
           </p>
         </section>
       </section>
