@@ -9,18 +9,46 @@
     border: 2px solid var(--mutedOne);
   }
 
+  .home__skills--wrapper {
+    overflow-x: hidden;
+    position: relative;
+    user-select: none;
+  }
+
+  .home__skills--track {
+    animation: scroll 15s linear infinite;
+    position: relative;
+    display: flex;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(var(--translateWidth));
+    }
+  }
+
   .home__skills {
     display: flex;
-    flex-direction: column;
     gap: 10px;
-    .home__skill {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      margin-bottom: 5px;
-      img {
-        width: 40px;
-      }
-    }
+  }
+}
+
+.home__book {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+  width: var(--bookWidth);
+  img {
+    width: 50px;
+    padding: 0px 15px;
+  }
+  span {
+    font-size: 12px;
+    text-align: center;
   }
 }

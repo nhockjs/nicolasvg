@@ -73,6 +73,12 @@ button {
   padding: 5px 20px;
   border: none;
   border-radius: 10px;
+  transition: 0.2s;
+}
+
+button:hover {
+  scale: 1.05;
+  cursor: pointer;
 }
 
 hr {
@@ -90,4 +96,31 @@ hr {
   padding: 20px;
   margin: 10px;
   width: var(--contentWidth);
+}
+
+.global__section {
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  .global__sectionTitle {
+    display: flex;
+    gap: 10px;
+    align-items: start;
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 5px;
+      border: 2px groove var(--mutedOne);
+    }
+    p {
+      font-size: 13px;
+      color: var(--mutedOne);
+    }
+  }
+}
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: auto;
 }
