@@ -31,9 +31,16 @@ export default function HomePage() {
     <section className="home__body">
       <section className="home__aboutme">
         <h1>Soy Nicolás Vanegas Garzón</h1>
+        <div className="home__data">
+          <img src="/icons/col.png" alt="Banderita de Colombia" />
+          <p>Bogotá, Colombia</p>
+          <img src="/icons/age.png" alt="" />
+          <p>{new Date().getFullYear() - 1998} años</p>
+        </div>
         <p>
           Soy desarrollador web profesional con enfoque en el entorno
-          JavaScript, con amplia experiencia en diseño UI/UX.
+          JavaScript, con más de {new Date().getFullYear() - 2019} años de
+          experiencia en diseño y desarrollo web.
         </p>
       </section>
       <hr />
@@ -143,6 +150,28 @@ export default function HomePage() {
             gobernadores de Colombia2019.
           </p>
         </section>
+      </section>
+      <br />
+      <hr />
+      <h2>Estudios</h2>
+      <section className="global__section">
+        <div className="global__sectionTitle">
+          <img src="icons/jobs/unicolmayor.jpg" alt="Trabajo de Freelancer" />
+          <div>
+            <h3>Profesional en Diseño Digital y Multimedia</h3>
+            <p>PROMOCIÓN 2020</p>
+          </div>
+        </div>
+      </section>
+      <br />
+      <section className="global__section">
+        <div className="global__sectionTitle">
+          <img src="icons/jobs/hdd.jpg" alt="Trabajo de Freelancer" />
+          <div>
+            <h3>Colegio Hernando Durán Dussán</h3>
+            <p>PROMOCIÓN 2015</p>
+          </div>
+        </div>
       </section>
     </section>
   );

@@ -9,6 +9,16 @@
     border: 2px solid var(--mutedOne);
   }
 
+  .home__data {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+    img {
+      width: 15px;
+    }
+  }
+
   .home__skills--wrapper {
     overflow-x: hidden;
     position: relative;
