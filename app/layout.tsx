@@ -32,7 +32,12 @@ export default function RootLayout({
               alt="Nicolás VG"
               className="layout__logo"
             />
-            <button className="layout__cta">Contactar</button>
+            <div>
+              <Link className="layout__header__link" href="/auth">
+                Registro
+              </Link>
+              <button className="layout__cta">Contactar</button>
+            </div>
           </div>
         </header>
         <div className="layout__container">

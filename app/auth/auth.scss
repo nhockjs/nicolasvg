@@ -1,0 +1,42 @@
+.auth__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth__form {
+  width: 70%;
+  font-size: 15px;
+  font-weight: 300;
+  text-align: center;
+  p {
+    font-size: 10px;
+    margin: 10px 0;
+  }
+  label {
+    margin: 5px 0;
+  }
+  input {
+    text-align: center;
+    font-size: 20px;
+  }
+  input:focus {
+    border: 2px solid var(--ctaColor);
+    outline: none;
+  }
+}
+
+.auth__link {
+  color: var(--textOne);
+}
+
+.auth__error {
+  color: var(--redColor);
+  font-weight: 400;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 15px !important;
+  line-height: 15px;
+  margin: 0px;
+}
