@@ -85,7 +85,9 @@ export default function RootLayout({
           </nav>
           <section className="layout__content global__card">{children}</section>
         </div>
-        <footer className="layout__footer">Pie de página</footer>
+        <footer className="layout__footer">
+          Hecho por Nicolás VG con NextJS
+        </footer>
       </body>
     </html>
   );
