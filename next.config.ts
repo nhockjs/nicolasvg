@@ -5,4 +5,10 @@ const nextConfig: NextConfig = {
   output: "standalone",
 };
 
+module.exports = {
+  experimental: {
+    serverActions: true,
+  },
+};
+
 export default nextConfig;
