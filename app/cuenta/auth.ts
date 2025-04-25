@@ -2,14 +2,24 @@ import { auth } from "../../lib/firebase";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signOut,
+  updateProfile,
 } from "firebase/auth";
 
 export const createUser = async (formData: FormData) => {
   const email = formData.get("email") as string;
   const password = formData.get("password") as string;
+  const username = formData.get("username") as string;
+
   let userAllRight: boolean;
   try {
-    await createUserWithEmailAndPassword(auth, email, password);
+    const userCredential = await createUserWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+    await updateProfile(userCredential.user, { displayName: username });
+
     userAllRight = true;
     return { userAllRight };
   } catch (error: any) {
@@ -32,4 +42,8 @@ export const loginUser = async (formData: FormData) => {
     userAllRight = false;
     return { userAllRight, code, message };
   }
+};
+
+export const logOutUser = async () => {
+  signOut(auth);
 };
