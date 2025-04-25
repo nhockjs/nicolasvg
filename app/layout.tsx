@@ -33,8 +33,8 @@ export default function RootLayout({
               className="layout__logo"
             />
             <div>
-              <Link className="layout__header__link" href="/auth">
-                Registro
+              <Link className="layout__header__link" href="/cuenta">
+                Mi cuenta
               </Link>
               <button className="layout__cta">Contactar</button>
             </div>

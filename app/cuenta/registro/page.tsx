@@ -1,11 +1,13 @@
 "use client";
 import Link from "next/link";
-import { createUser } from "./auth";
-import "./auth.scss";
+import { createUser } from "../auth";
+import "../auth.scss";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
-export default function Auth() {
+export default function Registro() {
   const [error, setError] = useState<null | string>(null);
+  const router = useRouter();
 
   const handleAuth = async (formData: FormData) => {
     const password = formData.get("password") as string;
@@ -19,6 +21,8 @@ export default function Auth() {
     const verifyUserCreation = await createUser(formData);
     if (verifyUserCreation.userAllRight) {
       setError(null);
+      console.log("Registro exitoso");
+      router.push("/cuenta");
     } else {
       let errorMsg;
 
@@ -66,7 +70,7 @@ export default function Auth() {
         <button type="submit">Registrarse</button>
       </form>
       <hr />
-      <Link className="auth__link" href="/auth/login">
+      <Link className="auth__link" href="/cuenta/acceso">
         Iniciar sesión
       </Link>
     </section>

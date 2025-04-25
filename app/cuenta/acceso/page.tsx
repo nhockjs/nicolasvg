@@ -3,14 +3,16 @@ import Link from "next/link";
 import { loginUser } from "../auth";
 import "../auth.scss";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
-export default function Login() {
+export default function Acceso() {
   const [error, setError] = useState<null | string>(null);
+  const router = useRouter();
+
   const handleLogin = async (formData: FormData) => {
     const password = formData.get("password") as string;
     const copyPassword = formData.get("copyPassword") as string;
 
-    // Validación extra: si usas copyPassword en login (no es común, pero lo dejaste), puedes verificar:
     if (copyPassword && password !== copyPassword) {
       setError("Las contraseñas no coinciden.");
       return;
@@ -21,6 +23,7 @@ export default function Login() {
     if (verifyUserLogin.userAllRight) {
       setError(null);
       console.log("Login exitoso");
+      router.push("/cuenta");
     } else {
       let errorMsg;
 
@@ -71,7 +74,9 @@ export default function Login() {
         <button type="submit">Iniciar sesión</button>
       </form>
       <hr />
-      <Link href="/login"></Link>
+      <Link className="auth__link" href="/cuenta/registro">
+        Registrarse
+      </Link>
     </section>
   );
 }
