@@ -1,11 +1,11 @@
 "use client";
 
 import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "../../lib/firebase";
-import { logOutUser } from "./auth";
+import { auth } from "../../firebase/firebase";
+import { logOutUser } from "./logOut";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import "./auth.scss";
+import "./cuenta.scss";
 
 export default function Cuenta() {
   const [email, setEmail] = useState("");

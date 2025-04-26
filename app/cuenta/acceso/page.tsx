@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
-import { loginUser } from "../auth";
-import "../auth.scss";
+import { loginUser } from "./login";
+import "../cuenta.scss";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
