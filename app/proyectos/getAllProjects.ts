@@ -2,9 +2,6 @@ import { database } from "@/firebase/firebase";
 import { getDocs, collection } from "firebase/firestore";
 import { dataProps } from "./nuevo/addProject";
 
-const allProjectsRef = collection(database, "projects");
-const allProjectsSnapshot = await getDocs(allProjectsRef);
-
 export async function getAllProjects() {
   const allProjectsRef = collection(database, "projects");
   const allProjectsSnapshot = await getDocs(allProjectsRef);
