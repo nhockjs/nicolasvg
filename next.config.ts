@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
 
 module.exports = {
   experimental: {
-    serverActions: true,
+    serverActions: {},
   },
   images: {
     domains: ["firebasestorage.googleapis.com"],
