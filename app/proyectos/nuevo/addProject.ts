@@ -1,24 +1,20 @@
-import { storage, database } from "../../../firebase/firebase";
-import { collection, addDoc } from "firebase/firestore";
+import { database } from "../../../firebase/firebase";
+import { doc, setDoc } from "firebase/firestore";
 
-const projectsCollection = collection(database, "projects");
-
-interface dataProps {
+export interface dataProps {
   title: string;
-  //thumbnail: File;
+  id: string;
+  thumbnail?: string;
   description: string;
-  //skills: string[];
+  skills: string[];
   urlProject: string;
 }
 
 export async function addProject(data: dataProps) {
-  const { title, description, urlProject } = data;
-
-  try {
-    console.log(data);
-    await addDoc(projectsCollection, { title, description, urlProject });
-    console.log("Datos enviados correctamente");
-  } catch (error: any) {
-    console.error("Error al enviar datos:", error.message);
-  }
+  const { id } = data;
+  console.log(data);
+  //const projectRef = await addDoc(collection(database, "projects"), data);
+  const projectRef = await doc(database, "projects", id);
+  await setDoc(projectRef, data);
+  console.log("Datos enviados correctamente");
 }
