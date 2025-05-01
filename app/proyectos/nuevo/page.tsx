@@ -15,6 +15,8 @@ const skills: string[] = [
   "SEO",
   "UIUX",
   "WordPress",
+  "Premio",
+  "Unity",
 ];
 
 export default function NuevoProyecto() {
