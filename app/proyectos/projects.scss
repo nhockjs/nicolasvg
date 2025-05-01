@@ -6,7 +6,7 @@
   gap: 10px;
   img {
     width: 15%;
-    border-radius: 10px;
+    border-radius: 5px;
   }
   .project__info {
     width: 85%;
@@ -19,18 +19,35 @@
   }
 }
 
+.projects__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  a {
+    text-decoration: none;
+    background-color: var(--ctaColor);
+    align-items: center;
+    display: flex;
+    height: 20px;
+    transition: 0.3s;
+  }
+  a:hover {
+    scale: 1.1;
+  }
+}
+
 .project__skills {
   display: flex;
   gap: 10px;
-  margin-bottom: 15px;
-  .project__skill {
-    font-size: 12px;
-    font-weight: 200;
-    padding: 1px 10px;
-    border-radius: 10px;
-    background-color: var(--ctaColor);
-    color: #fafafa;
-  }
+}
+
+.project__skill {
+  font-size: 12px;
+  font-weight: 200;
+  padding: 1px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--ctaColor);
+  color: #fafafa;
 }
 
 //* EDITOR DE PROYECTOS

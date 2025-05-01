@@ -13,7 +13,15 @@ export default function Proyectos() {
 
   const fetchProjects = async () => {
     const data = await getAllProjects();
-    setProjects(data);
+
+    // Mezclar aleatoriamente los proyectos (Fisher-Yates)
+    const shuffled = [...data];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+
+    setProjects(shuffled);
   };
 
   useEffect(() => {
@@ -37,16 +45,25 @@ export default function Proyectos() {
               <p> {project.description} </p>
             </div>
           </div>
-          <div className="project__skills">
-            {project.skills.map((skill) => (
-              <span
-                key={project.skills.indexOf(skill)}
-                className="project__skill"
-              >
-                {" "}
-                {skill}{" "}
-              </span>
-            ))}
+          <div className="projects__bottom">
+            <div className="project__skills">
+              {project.skills.map((skill) => (
+                <span
+                  key={project.skills.indexOf(skill)}
+                  className="project__skill"
+                >
+                  {" "}
+                  {skill}{" "}
+                </span>
+              ))}
+            </div>
+            <a
+              href={project.urlProject}
+              target="_blank"
+              className="project__skill"
+            >
+              Ver proyecto
+            </a>
           </div>
           <hr />
         </section>
