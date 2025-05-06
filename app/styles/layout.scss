@@ -79,3 +79,19 @@
 .layout__header__link:hover {
   color: var(--mutedTwo);
 }
+
+.layout__cta {
+  background-color: var(--ctaColor);
+  color: var(--textOne);
+  padding: 5px 20px;
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+.layout__cta:hover {
+  scale: 1.05;
+  cursor: pointer;
+  opacity: 10;
+}
