@@ -34,7 +34,13 @@ export default function RootLayout({
               {/* <Link className="layout__header__link" href="/cuenta">
                 Mi cuenta
               </Link> */}
-              <a className="layout__cta">Contactar</a>
+              <a
+                href="https://api.whatsapp.com/send?phone=573054139565&text=Hola,%20vi%20tu%20portafolio%20en%20nicolasvg.com"
+                target="_blank"
+                className="layout__cta"
+              >
+                Contactar
+              </a>
             </div>
           </div>
         </header>
