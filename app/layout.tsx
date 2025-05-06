@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Kanit } from "next/font/google";
 import "./globals.scss";
 import "./styles/layout.scss";
-import Image from "next/image";
-import Link from "next/link";
 
 const kanit = Kanit({
   weight: ["200", "400", "700"],
@@ -24,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={kanit.variable}>
         <header className="layout__header">
           <div className="layout__header--content">
             <img
@@ -33,15 +31,15 @@ export default function RootLayout({
               className="layout__logo"
             />
             <div>
-              <Link className="layout__header__link" href="/cuenta">
+              {/* <Link className="layout__header__link" href="/cuenta">
                 Mi cuenta
-              </Link>
-              <button className="layout__cta">Contactar</button>
+              </Link> */}
+              <a className="layout__cta">Contactar</a>
             </div>
           </div>
         </header>
         <div className="layout__container">
-          <nav className="layout__nav global__card">
+          {/* <nav className="layout__nav global__card">
             <Link href="/" className="layout__link">
               <Image
                 src="/imgs/ppic.jpg"
@@ -87,7 +85,8 @@ export default function RootLayout({
               />{" "}
               <span>Blog</span>
             </Link>
-          </nav>
+          </nav> */}
+
           <section className="layout__content global__card">{children}</section>
         </div>
         <footer className="layout__footer">
