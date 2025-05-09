@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Kanit } from "next/font/google";
 import "./globals.scss";
 import "./styles/layout.scss";
+import Link from "next/link";
+import ButtonMenu from "@/components/Nav/ButtonMenu/ButtonMenu";
+import Nav from "@/components/Nav/Nav";
 
 const kanit = Kanit({
   weight: ["200", "400", "700"],
@@ -23,78 +26,36 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={kanit.variable}>
+        {/* HEADER */}
         <header className="layout__header">
-          <div className="layout__header--content">
-            <img
-              src="/imgs/nicolasvg-1.png"
-              alt="Nicolás VG"
-              className="layout__logo"
-            />
-            <div>
-              {/* <Link className="layout__header__link" href="/cuenta">
-                Mi cuenta
-              </Link> */}
-              <a
-                href="https://api.whatsapp.com/send?phone=573054139565&text=Hola,%20vi%20tu%20portafolio%20en%20nicolasvg.com"
-                target="_blank"
-                className="layout__cta"
-              >
-                Contactar
-              </a>
+          <div className="global__container layout__header__container">
+            <a href="https://nicolasvg.com" className="layout__logo">
+              <img
+                src="/imgs/ppic.jpg"
+                alt="Nicolás Vanegas"
+                className="global__ppic"
+              />
+              <div className="layout__tagline">
+                <img
+                  src="/imgs/nicolasvg-1.png"
+                  width="80"
+                  alt="Logo Nicolás vg"
+                />
+                <p>Web Developer</p>
+              </div>
+            </a>
+            <div className="layout__header__buttons">
+              <button>Contactar</button>
+              <Nav />
             </div>
           </div>
+          <div className="global__hr layout__hr--header"> </div>
         </header>
-        <div className="layout__container">
-          {/* <nav className="layout__nav global__card">
-            <Link href="/" className="layout__link">
-              <Image
-                src="/imgs/ppic.jpg"
-                alt="Sobre Nicolás VG"
-                width={50}
-                height={50}
-              />
-              <span>Sobre mí</span>
-            </Link>
-            <Link href="/estudios" className="layout__link">
-              <Image
-                src="/icons/xp.png"
-                alt="Experiencia laboral de Nicolás VG"
-                width={50}
-                height={50}
-              />{" "}
-              <span>Estudios</span>
-            </Link>
-            <Link href="/proyectos" className="layout__link">
-              <Image
-                src="/icons/projects.png"
-                alt="Proyectos de Nicolás VG"
-                width={50}
-                height={50}
-              />{" "}
-              <span>Proyectos</span>
-            </Link>
-            <Link href="/laboratorio" className="layout__link">
-              <Image
-                src="/icons/laboratorio.png"
-                alt="Widgets de práctica de Nicolás VG"
-                width={50}
-                height={50}
-              />{" "}
-              <span>Laboratorio</span>
-            </Link>
-            <Link href="/blog" className="layout__link">
-              <Image
-                src="/icons/blog.png"
-                alt="Opiniones de Nicolás VG"
-                width={50}
-                height={50}
-              />{" "}
-              <span>Blog</span>
-            </Link>
-          </nav> */}
 
-          <section className="layout__content global__card">{children}</section>
-        </div>
+        {/* CONTENIDO */}
+        <section className="layout__content global__card">{children}</section>
+        {/* FOOTER */}
+        <div className="global__hr"> </div>
         <footer className="layout__footer">
           Hecho por Nicolás VG con NextJS
         </footer>

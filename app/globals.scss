@@ -4,6 +4,7 @@
   --colorOne: #03060e;
   --colorTwo: #070b17;
   --colorThree: #0a0f20;
+  --colorHover: #182244;
   --textOne: #fffdf9;
   --textTwo: #f9eee0;
   --textThree: #fffaf1;
@@ -14,12 +15,12 @@
   --greenColor: #05ea78;
   --yellowColor: #ffd400;
 
-  --colorThrgee: rgb(10, 15, 32) 0;
-  // Size globals
-
-  --contentWidth: 550px;
-  @media (max-width: 600px) {
-    --contentWidth: 95vw;
+  --contentWidth: 95vw;
+  @media (min-width: 768px) {
+    --contentWidth: 900px;
+  }
+  * {
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
@@ -52,8 +53,8 @@ body {
   background: #101937;
   background: radial-gradient(
     ellipse at top center,
-    rgb(16, 25, 55) 0%,
-    rgba(3, 6, 14, 1) 100%
+    rgb(22, 36, 83) 0%,
+    rgb(9, 18, 44) 100%
   );
   color: var(--textOne);
 }
@@ -70,8 +71,7 @@ p {
 button {
   background-color: var(--ctaColor);
   color: var(--textOne);
-  padding: 5px 20px;
-  height: 35px;
+  padding: 7px 14px;
   border: none;
   border-radius: 5px;
   transition: 0.2s;
@@ -91,10 +91,10 @@ hr {
 }
 
 .global__card {
-  background-color: var(--colorTwo);
+  background-color: transparent;
   border-radius: 10px;
   box-sizing: border-box;
-  padding: 20px;
+  padding: 0px;
   margin: 10px;
   width: var(--contentWidth);
 }
@@ -164,4 +164,29 @@ form {
 .global__checkboxes {
   display: flex;
   flex-wrap: wrap;
+}
+
+.global__hr {
+  height: 2px;
+  background: #43539c;
+  background: radial-gradient(
+    circle,
+    rgba(67, 83, 156, 1) 0%,
+    rgba(2, 22, 77, 1) 100%
+  );
+  z-index: 999;
+  width: 100%;
+  position: absolute;
+}
+
+.global__container {
+  width: var(--contentWidth);
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.global__ppic {
+  width: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--ctaColor);
 }

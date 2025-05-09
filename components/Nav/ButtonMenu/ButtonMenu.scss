@@ -1,0 +1,43 @@
+.buttonMenu__button {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  transition: 0.3s;
+  border-radius: 50%;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  .buttonMenu__lineMenu {
+    height: 3px;
+    width: 20px;
+    border-radius: 1px;
+    background-color: var(--textTwo);
+    transition: all 0.3s ease;
+  }
+}
+
+.buttonMenu__button:focus {
+  outline: none;
+  background-color: var(--colorHover);
+}
+
+.buttonMenu__buttonMenu:hover {
+  background-color: var(--colorHover);
+  -webkit-tap-highlight-color: transparent;
+}
+.buttonMenu__lineMenu--open1 {
+  position: absolute;
+  right: 25%;
+  top: 45%;
+  transform: rotate(45deg);
+}
+.buttonMenu__lineMenu--open2 {
+  position: absolute;
+  right: 25%;
+  top: 45%;
+  transform: rotate(315deg);
+}
