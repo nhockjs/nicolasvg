@@ -58,7 +58,7 @@ export default function Acceso() {
   };
 
   return (
-    <section className="auth__container">
+    <section className="auth__main global__section">
       <h1>Iniciar sesión </h1>
       <hr />
       <form action={handleLogin} className="auth__form">

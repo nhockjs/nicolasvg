@@ -42,8 +42,13 @@
   }
   .layout__header__buttons {
     display: flex;
+    align-items: center;
     gap: 10px;
   }
+}
+
+.layout__content {
+  min-height: 100vh;
 }
 
 .layout__footer {

@@ -1,0 +1,72 @@
+.skills__main {
+  position: relative;
+  width: 250px;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 15px 7px;
+  overflow: hidden;
+  border: 1px solid var(--colorHover);
+  background-color: color-mix(in srgb, var(--colorThree) 25%, transparent);
+}
+
+.skills__main::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(
+    to right,
+    color-mix(in srgb, var(--colorThree) 50%, transparent) 0%,
+    color-mix(in srgb, var(--colorThree) 10%, transparent) 15%,
+    color-mix(in srgb, var(--colorThree) 10%, transparent) 85%,
+    color-mix(in srgb, var(--colorThree) 50%, transparent) 100%
+  );
+}
+
+.skills__wrapper {
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+}
+
+.skills__track {
+  animation: scroll 10s linear infinite;
+  position: relative;
+  display: flex;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(var(--translateWidth));
+  }
+}
+
+.skills__skills {
+  display: flex;
+  gap: 10px;
+}
+
+.skills__book {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  img {
+    width: 17px;
+    padding: 0px 15px;
+  }
+  span {
+    line-height: 7px;
+    font-size: 7px;
+    font-weight: 200;
+    text-align: center;
+  }
+}

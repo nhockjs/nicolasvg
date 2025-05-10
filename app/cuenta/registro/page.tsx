@@ -50,7 +50,7 @@ export default function Registro() {
   };
 
   return (
-    <section className="auth__container">
+    <section className="auth__main global__section">
       <h1>Registrarse </h1>
       <hr />
       <form action={handleAuth} className="auth__form">

@@ -1,234 +1,170 @@
-"use client";
-import React from "react";
+import Skills from "@/app/components/Skills/Skills";
 import "./styles/home.scss";
-import Image from "next/image";
+import SubTitle from "@/app/components/SubTitle/SubTitle";
+import Job, { JobProps } from "./components/Job/Job";
+import Degree, { DegreeProps } from "./components/Degree/Degree";
+import AllProjects from "./components/AllProjects/AllProjects";
 
-interface skillsProps {
-  id: number;
-  name: string;
-  icono: string;
-}
-
-const skills: skillsProps[] = [
-  { id: 0, name: "HTML 5", icono: "html" },
-  { id: 1, name: "CSS 3", icono: "css" },
-  { id: 2, name: "JavaScript", icono: "js" },
-  { id: 3, name: "NextJS", icono: "nextjs" },
-  { id: 4, name: "TypeScript", icono: "typescript" },
-  { id: 5, name: "ReactJS", icono: "react" },
-  { id: 6, name: "Sass", icono: "sass" },
-  { id: 7, name: "SEO", icono: "seo" },
-  { id: 8, name: "UI/UX", icono: "uiux" },
-  { id: 9, name: "WordPress", icono: "wordpress" },
+const jobs: JobProps[] = [
+  {
+    id: 0,
+    job: "Desarrollador Web",
+    company: "vyte.com.co",
+    from: "FEB 2024",
+    to: "PRESENTE",
+    imagePath: "icons/jobs/vyte.jpg",
+  },
+  {
+    id: 1,
+    job: "Diseñador UI/UX",
+    company: "Indra / Ecopetrol",
+    from: "SEP 2022",
+    to: "FEB 2024",
+    imagePath: "icons/jobs/ecopetrol.jpg",
+  },
+  {
+    id: 2,
+    job: "Líder de proyectos web",
+    company: "Newrona",
+    from: "MAY 2022",
+    to: "OCT 2022",
+    imagePath: "icons/jobs/newrona.jpg",
+  },
+  {
+    id: 3,
+    job: "Diseñador web UI/UX",
+    company: "Newrona",
+    from: "ENE 2021",
+    to: "MAY 2022",
+    imagePath: "icons/jobs/newrona.jpg",
+  },
+  {
+    id: 4,
+    job: "Administrador web",
+    company: "Emporia CYA",
+    from: "JUN 2019",
+    to: "DIC 2019",
+    imagePath: "icons/jobs/emporiacya.jpg",
+  },
 ];
 
-let bookWidth = 80;
-let translateWidth = `-${skills.length * bookWidth}px`;
+const degrees: DegreeProps[] = [
+  {
+    id: 0,
+    degree: "Profesional en Diseño Digital",
+    entity: "Unicolmayor",
+    date: "2020",
+    endType: "GRADUACIÓN",
+    imagePath: "icons/jobs/unicolmayor.jpg",
+  },
+  {
+    id: 1,
+    degree: "JavaScript con NodeJS",
+    entity: "Udemy",
+    date: "2022",
+    endType: "CURSO",
+    imagePath: "icons/jobs/udemy.jpg",
+  },
+  {
+    id: 2,
+    degree: "Inglés",
+    entity: "British Council",
+    date: "2017",
+    endType: "CURSO",
+    imagePath: "icons/jobs/british.jpg",
+  },
+  {
+    id: 3,
+    degree: "Bachillerato Énfasis en Sistemas",
+    entity: "Colegio HDD",
+    date: "2015",
+    endType: "GRADUACIÓN",
+    imagePath: "icons/jobs/hdd.jpg",
+  },
+  {
+    id: 4,
+    degree: "Curso de Programación Básica",
+    entity: "Plazi",
+    date: "2021",
+    endType: "CURSO",
+    imagePath: "icons/jobs/platzi.jpg",
+  },
+];
 
-console.log(translateWidth);
-
-export default function HomePage() {
+export default function Home() {
   return (
-    <section className="home__body">
-      <section className="home__aboutme">
-        <div className="home__image">
-          <Image
-            src="/imgs/ppic.jpg"
-            alt="Sobre Nicolás VG"
-            width={50}
-            height={50}
-          />
-          <div>
-            <h1>Nicolás Vanegas Garzón</h1>
-            <div className="home__data">
-              <img src="/icons/col.png" alt="Banderita de Colombia" />
-              <p>Bogotá, Colombia</p>
-              <img src="/icons/age.png" alt="" />
-              <p>{new Date().getFullYear() - 1998} años</p>
-            </div>
-          </div>
+    <main className="home__main">
+      {/* SECCIÓN BANNER */}
+      <section className="home__banner">
+        <br />
+        <h2>Nicolás Vanegas Garzón</h2>
+        <h1>Desarrollador Web Next.js</h1>
+        <div className="home__data">
+          <img src="/icons/col.png" alt="Banderita de Colombia" />
+          <p>Bogotá, Colombia</p>
+          <span>| </span>
+          <p>{new Date().getFullYear() - 1998} años</p>
         </div>
         <br />
-        <p>
-          Desarrollador web graduado de la Universidad Mayor de Cundinamarca
-          como Diseñador Digital y Multimedia con conocimiento en Desarrollo Web
-          FrontEnd. Amplia experiencia en diseño y desarrollo de interfaz y
-          experiencia de usuario {`(Product Design)`}.
-        </p>
-      </section>
-      <hr />
-      <h2>Habilidades técnicas</h2>
-
-      <div className="home__skills--wrapper">
-        <div
-          className="home__skills--track"
-          style={
-            {
-              "--translateWidth": translateWidth,
-              "--bookWidth": bookWidth,
-            } as React.CSSProperties
-          }
+        <a
+          href="/documents/resume-es-0525.pdf"
+          download="resume-es-0525.pdf"
+          className="global__button"
         >
-          {skills.map((x) => (
-            <div className="home__book" key={x.id}>
-              <img
-                src={`/icons/skills/${x.icono}.png`}
-                alt={`Conocimientos en ${x.name}`}
+          <img src="/icons/pdf.svg" alt="Descargar PDF de CV" />
+          Descargar CV
+        </a>
+        <br />
+        <Skills />
+      </section>
+      <br />
+      {/* SECCIÓN DE INFORMACIÓN GENERAL */}
+      <div className="home__information">
+        {/* SECCIÓN ABOUT */}
+        <section className="home__about global__section">
+          <SubTitle text="Sobre mí" imagePath="/gifs/brujula.webp" />
+          <section className="global__innerSection">
+            <p>
+              Desarrollador web graduado de la Universidad Mayor de Cundinamarca
+              como Diseñador Digital y Multimedia con conocimiento en Desarrollo
+              Web FrontEnd. Amplia experiencia en diseño y desarrollo de
+              interfaz y experiencia de usuario {`(Product Design)`}.
+            </p>
+          </section>
+          <SubTitle text="Educación" imagePath="/gifs/book.webp" />
+          {/* SECCIÓN EDUCACIÓN */}
+          <section className="home__education global__innerSection">
+            {degrees.map((degree) => (
+              <Degree
+                key={degree.id}
+                degree={degree.degree}
+                entity={degree.entity}
+                date={degree.date}
+                imagePath={degree.imagePath}
+                endType={degree.endType}
               />
-              <span> {x.name} </span>
-            </div>
-          ))}
-
-          {skills.map((x) => (
-            <div className="home__book" key={x.id} aria-hidden="true">
-              <img
-                src={`/icons/skills/${x.icono}.png`}
-                alt={`Conocimientos en ${x.name}`}
+            ))}
+          </section>
+        </section>
+        {/* SECCIÓN EXPERIENCIA */}
+        <section className="home__xp global__section">
+          <SubTitle text="Experiencia" imagePath="/gifs/xp.gif" />
+          <section className="global__innerSection">
+            {jobs.map((job) => (
+              <Job
+                key={job.id}
+                job={job.job}
+                company={job.company}
+                from={job.from}
+                to={job.to}
+                imagePath={job.imagePath}
               />
-              <span> {x.name} </span>
-            </div>
-          ))}
-        </div>
+            ))}
+          </section>
+        </section>
       </div>
-
-      <hr />
-      <section className="home__xp">
-        <h2>Experiencia</h2>
-        <section className="global__section">
-          <div className="global__sectionTitle">
-            <img src="icons/jobs/vyte.jpg" alt="Trabajo en vyte.com.co" />
-            <div>
-              <h3>
-                Desarrollador Web | <b>vyte.com.co</b>
-              </h3>
-              <p>FEB 2024 - PRESENTE</p>
-            </div>
-          </div>
-          <p>
-            Como independiente: Diseño de producto, interfaz y experiencia de
-            usuario. Desarrollo y planeación de productos web con diversas
-            tecnologías. Montaje de websites desde 0 con hosting, dominio y
-            desarrollo web con JavaScript / WordPress.
-          </p>
-        </section>
-        <br />
-        <section className="global__section">
-          <div className="global__sectionTitle">
-            <img
-              src="icons/jobs/ecopetrol.jpg"
-              alt="Trabajo en Indra y Ecopetrol"
-            />
-            <div>
-              <h3>
-                Diseñador UI/UX | <b>Indra / Ecopetrol</b>{" "}
-              </h3>
-              <p>SEP 2022 - FEB 2024</p>
-            </div>
-          </div>
-          <p>
-            Diseño y experiencia de usuario para espacios web internos y
-            externos de Ecopetrol con Indra Colombia
-          </p>
-        </section>
-        <br />
-        <section className="global__section">
-          <div className="global__sectionTitle">
-            <img src="icons/jobs/newrona.jpg" alt="Trabajo en Newrona" />
-            <div>
-              <h3>
-                Líder de proyectos web | <b>Newrona</b>
-              </h3>
-              <p>MAY 2022 - OCT 2022</p>
-            </div>
-          </div>
-          <p>
-            Dirección de proyectos de AR y VR con enfoque WebGL, empalme con
-            diseño y desarrollo web.
-          </p>
-        </section>
-        <br />
-        <section className="global__section">
-          <div className="global__sectionTitle">
-            <img src="icons/jobs/newrona.jpg" alt="Trabajo en Newrona" />
-            <div>
-              <h3>
-                Diseñador web UI/UX | <b>Newrona</b>
-              </h3>
-              <p>ENE 2021 - MAY 2022</p>
-            </div>
-          </div>
-          <p>
-            Diseño de producto digital enfocado en realidad virtual y realidad
-            aumentada para diversas compañías latinoamericanas.
-          </p>
-        </section>
-        <br />
-        <section className="global__section">
-          <div className="global__sectionTitle">
-            <img src="icons/jobs/emporiacya.jpg" alt="Trabajo Emporia CYA" />
-            <div>
-              <h3>
-                Administrador web | <b>Emporia CYA</b>
-              </h3>
-              <p>JUN 2019 - DIC 2019</p>
-            </div>
-          </div>
-          <p>
-            Administración web de campañas políticas en elecciones de alcaldes y
-            gobernadores de Colombia 2019.
-          </p>
-        </section>
-      </section>
-      <br />
-      <hr />
-      <h2>Estudios</h2>
-      <section className="global__section">
-        <div className="global__sectionTitle">
-          <img src="icons/jobs/unicolmayor.jpg" alt="Estudio en Unicolmayor" />
-          <div>
-            <h3>
-              Profesional en Diseño Digital | <b>Unicolmayor</b>
-            </h3>
-            <p>GRADUACIÓN 2020</p>
-          </div>
-        </div>
-      </section>
-      <br />
-      <section className="global__section">
-        <div className="global__sectionTitle">
-          <img src="icons/jobs/udemy.jpg" alt="Curso Udemy de NodeJS" />
-          <div>
-            <h3>
-              JavaScript con NodeJS | <b>Udemy</b>
-            </h3>
-            <p>CURSO 2022</p>
-          </div>
-        </div>
-      </section>
-      <br />
-      <section className="global__section">
-        <div className="global__sectionTitle">
-          <img src="icons/jobs/british.jpg" alt="Curso en el British Council" />
-          <div>
-            <h3>
-              Inglés | <b>British Council</b>
-            </h3>
-            <p>CURSO 2017</p>
-          </div>
-        </div>
-      </section>
-      <br />
-      <section className="global__section">
-        <div className="global__sectionTitle">
-          <img src="icons/jobs/hdd.jpg" alt="Colegio Hernando Duran Dussan" />
-          <div>
-            <h3>
-              Bachillerato Énfasis en Sistemas | <b>Colegio HDD</b>
-            </h3>
-            <p>GRADUACIÓN 2015</p>
-          </div>
-        </div>
-      </section>
-    </section>
+      {/* SECCIÓN PROYECTOS DESTACADOS */}
+      <AllProjects />
+    </main>
   );
 }

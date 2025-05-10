@@ -1,12 +1,13 @@
-.auth__container {
+.auth__main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 25px 0;
 }
 
 .auth__form {
-  width: 70%;
+  width: 80%;
   font-size: 15px;
   font-weight: 300;
   text-align: center;
@@ -35,4 +36,10 @@
 
 .auth__logout {
   background-color: var(--redColor);
+}
+@media (min-width: 768px) {
+  .auth__main {
+    width: 70%;
+    margin: 25px auto;
+  }
 }

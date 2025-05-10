@@ -1,0 +1,29 @@
+.degree__main {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 10px;
+  border: 1px solid var(--colorHover);
+  padding: 10px;
+  border-radius: 5px;
+  img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    outline: 2px solid blue;
+    outline-offset: -1px;
+  }
+  .degree__info {
+    display: flex;
+    flex-direction: column;
+    h4 {
+      font-size: 12px;
+      font-weight: 400;
+    }
+  }
+  span {
+    color: var(--textTwo);
+    font-weight: 200;
+    font-size: 10px;
+  }
+}
